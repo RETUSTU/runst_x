@@ -7,6 +7,9 @@ edition = "2021"
 uefi = { version = "0.28", features = ["alloc"] }
 uefi-services = "0.25"
 
+[build-dependencies]
+chrono = "0.4"
+
 [profile.dev]
 panic = "abort"
 

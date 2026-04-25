@@ -1,6 +1,9 @@
+use alloc::format;
 use uefi::prelude::*;
 use uefi::proto::console::text::Color;
 use core::fmt::Write;
+
+use crate::constants::{SYSTEM_FULL_NAME, SYSTEM_DESCRIPTION, WELCOME_MESSAGE};
 
 pub struct Display;
 
@@ -60,12 +63,12 @@ impl Display {
         Self::clear_screen(st);
         Self::println_colored(st, "╔════════════════════════════════════════════════════════════════╗", Color::Cyan, Color::Black);
         Self::println_colored(st, "║                                                                ║", Color::Cyan, Color::Black);
-        Self::println_colored(st, "║                        RunST X v25.12.12B                      ║", Color::Green, Color::Black);
-        Self::println_colored(st, "║                     UEFI Operating System                      ║", Color::Yellow, Color::Black);
+        Self::println_colored(st, &format!("║{:^64}║", SYSTEM_FULL_NAME), Color::Green, Color::Black);
+        Self::println_colored(st, &format!("║{:^64}║", SYSTEM_DESCRIPTION), Color::Yellow, Color::Black);
         Self::println_colored(st, "║                                                                ║", Color::Cyan, Color::Black);
         Self::println_colored(st, "╚════════════════════════════════════════════════════════════════╝", Color::Cyan, Color::Black);
         Self::println(st, "");
-        Self::print_success(st, "System initialized successfully!");
+        Self::print_success(st, WELCOME_MESSAGE);
         Self::println(st, "");
     }
 }

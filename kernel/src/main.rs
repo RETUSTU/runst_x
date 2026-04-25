@@ -9,6 +9,7 @@ mod keyboard;
 mod display;
 mod shell;
 mod commands;
+mod constants;
 
 #[entry]
 fn efi_main(_handle: Handle, mut st: SystemTable<Boot>) -> Status {
@@ -19,7 +20,7 @@ fn efi_main(_handle: Handle, mut st: SystemTable<Boot>) -> Status {
     let mut shell = shell::Shell::new(&mut st);
     
     shell.show_banner();
-    shell.println("Type 'help' to list commands.");
+    shell.println(crate::constants::HELP_PROMPT);
     shell.println("");
 
     loop {
