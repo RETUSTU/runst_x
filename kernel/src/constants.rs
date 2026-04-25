@@ -6,10 +6,10 @@
 pub const SYSTEM_NAME: &str = "RunST X";
 
 /// 系统版本号
-pub const SYSTEM_VERSION: &str = "25.12.13B";
+pub const SYSTEM_VERSION: &str = "25.12.13C";
 
 /// 系统完整名称
-pub const SYSTEM_FULL_NAME: &str = "RunST X v25.12.13B";
+pub const SYSTEM_FULL_NAME: &str = "RunST X v25.12.13C";
 
 /// 系统描述
 pub const SYSTEM_DESCRIPTION: &str = "UEFI Operating System";
@@ -22,6 +22,9 @@ pub const SYSTEM_PROMPT: &str = "RunST X> ";
 
 /// 欢迎消息
 pub const WELCOME_MESSAGE: &str = "System initialized successfully!";
+
+/// 官网链接
+pub const WEBSITE_URL: &str = "https://runst.rtstudio.top";
 
 /// 帮助提示信息
 pub const HELP_PROMPT: &str = "Type 'help' to list commands.";
