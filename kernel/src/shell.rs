@@ -4,6 +4,7 @@ use uefi::proto::console::text::Color;
 
 use crate::keyboard::Keyboard;
 use crate::display::Display;
+use crate::constants::{SYSTEM_PROMPT, WELCOME_MESSAGE, HELP_PROMPT};
 
 pub struct Shell<'a> {
     st: &'a mut SystemTable<Boot>,
@@ -14,7 +15,7 @@ impl<'a> Shell<'a> {
     pub fn new(st: &'a mut SystemTable<Boot>) -> Self {
         Self {
             st,
-            prompt: "RunST X> ",
+            prompt: SYSTEM_PROMPT,
         }
     }
 
