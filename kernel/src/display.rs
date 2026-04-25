@@ -3,7 +3,7 @@ use uefi::prelude::*;
 use uefi::proto::console::text::Color;
 use core::fmt::Write;
 
-use crate::constants::{SYSTEM_FULL_NAME, SYSTEM_DESCRIPTION, WELCOME_MESSAGE};
+use crate::constants::{SYSTEM_FULL_NAME, SYSTEM_DESCRIPTION, WELCOME_MESSAGE, WEBSITE_URL};
 
 pub struct Display;
 
@@ -69,6 +69,7 @@ impl Display {
         Self::println_colored(st, "╚════════════════════════════════════════════════════════════════╝", Color::Cyan, Color::Black);
         Self::println(st, "");
         Self::print_success(st, WELCOME_MESSAGE);
+        Self::print_info(st, &format!("Visit our website: {}", WEBSITE_URL));
         Self::println(st, "");
     }
 }
